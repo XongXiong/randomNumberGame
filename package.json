@@ -1,0 +1,24 @@
+{
+  "name": "groupRandomNumberGuess",
+  "version": "1.0.0",
+  "description": "Team Random Number Guess =",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexanderbliss/groupRandomNumberGuess.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexanderbliss/groupRandomNumberGuess/issues"
+  },
+  "homepage": "https://github.com/alexanderbliss/groupRandomNumberGuess#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}
