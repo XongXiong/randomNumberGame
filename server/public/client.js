@@ -111,19 +111,15 @@ function checkGuesses(){
         console.log(response);
         for(var i=0; i<response.length; i+=1){
             $('#hint' + i).text(response[i])
+            if (response[i] === 'Correct'){
+                $('h1').text('Congrats player ' + (i + 1) + ' !' );
+
+            }
             console.log($('#hint'+i));
         }
 
     })
-    .fail()
+    .fail(function (message) {
+         console.log('error', message);
+    });
 }
-
-
-
-
-
-
-
-
-
-

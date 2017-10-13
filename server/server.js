@@ -44,7 +44,7 @@ function checkGuesses(){
         
         if (guessArray[i] === number){
             console.log(i, 'Correct');
-            results.push('correct')
+            results.push('Correct')
 
         }else if(guessArray[i] > number){
             console.log(i ,'lower');
