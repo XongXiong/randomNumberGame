@@ -1,0 +1,30 @@
+
+
+.selectedButton {
+    background-color:red;
+}
+
+.playerDivs {
+    padding: 10px;
+    margin: 10px;
+    background-color:;
+    border: solid 1px black;
+    width: 200px;
+}
+
+.higher {
+    background-color: cornflowerblue;
+}
+.lower{
+    background-color: pink;
+}
+
+#container{
+    width: 900px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: lightgray;
+    font-family: sans-serif;
+}
