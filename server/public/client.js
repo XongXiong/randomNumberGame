@@ -26,6 +26,7 @@ var $div = $('<div></div>');
     $div.append('<button id="hard">Hard: 100</button>');
     $div.append('<button id="start">Start Game</button>');
     $('#container').append($div);
+    $('h1').text('Guess');
    
 };
 
@@ -101,7 +102,6 @@ function submitGuess(){
     });
 }
 
-
 function checkGuesses(){
     $.ajax({
         method: 'GET',
@@ -113,7 +113,9 @@ function checkGuesses(){
             $('#hint' + i).text(response[i])
             if (response[i] === 'Correct'){
                 $('h1').text('Congrats player ' + (i + 1) + ' !' );
-
+                $('#container').empty();
+                $('#container').append('<button id="cancel">Play Again</button>');
+                $('#container').append()
             }
             console.log($('#hint'+i));
         }
