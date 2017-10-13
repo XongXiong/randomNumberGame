@@ -66,8 +66,8 @@ function appendPlay(){
     var $playerDiv;
     for (var i = 1; i < 5; i += 1){
         $playerDiv = $('<div id="player' + i + '"></div>');
-        $playerDiv.append('<input type="text" placeholder="Player ' + i + ' guess" id="input'+ i + '">');
-        $playerDiv.append('<div id="hint' + i + '">hint</div>');
+        $playerDiv.append('<input type="number" placeholder="Player ' + i + ' guess" id="input'+ i + '">');
+        $playerDiv.append('<div>player ' + i + ' hint:<span  id="hint' + (i-1) + '"></span></div>');
         $('#container').append($playerDiv);
     }
     $('#container').append('<div>Round <span id="counter">0</span></div>');
@@ -75,14 +75,18 @@ function appendPlay(){
     $('#container').append('<div>Max Number: ' + maxVal + '</div>');
     $('#container').append('<button id="cancel">Cancel Game</button>');
 }
-
+var rounds = 0;
 function submitGuess(){
     var guess = {
         playerOneGuess: $('#input1').val(),
         playerTwoGuess: $('#input2').val(),
         playerThreeGuess: $('#input3').val(),
         playerFourGuess: $('#input4').val()
+
     }
+    $('input').val('');
+    rounds = rounds + 1;
+    $('#counter').text(rounds);
     $.ajax({
         method: 'POST',
         url: '/submitGuess',
@@ -103,7 +107,14 @@ function checkGuesses(){
         method: 'GET',
         url: '/checkGuesses'
     })
-    .done()
+    .done(function(response){
+        console.log(response);
+        for(var i=0; i<response.length; i+=1){
+            $('#hint' + i).text(response[i])
+            console.log($('#hint'+i));
+        }
+
+    })
     .fail()
 }
 
